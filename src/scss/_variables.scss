@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Viga&display=swap');
+$cream:#FDF9F3;
+$brd:2px solid black;
+$green:rgba(0, 255, 191, 1);
+$darkgreen:rgb(2, 170, 128);
+$red:#f05f4c;
+$darkred:rgb(197, 85, 70);
+$lightred:rgb(245, 112, 94);
+
+@keyframes bounceIn{
+    0%{
+      opacity: 0;
+      transform:  translate(-50%, -50%) scale(0.3) ;
+    }
+    50%{
+      opacity: 0.9;
+      transform:  translate(-50%, -50%) scale(1.1);
+    }
+    80%{
+      opacity: 1;
+      transform:  translate(-50%, -50%) scale(0.89);
+    }
+    100%{
+      opacity: 1;
+      transform:  translate(-50%, -50%) scale(1);
+    }
+}

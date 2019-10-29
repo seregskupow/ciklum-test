@@ -1,0 +1,248 @@
+@import "variables", "additional";
+*,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Viga", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100vw;
+  background: $cream;
+  border-bottom: $brd;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+
+  & .header-wrap {
+    width: 90%;
+    margin: 0 auto;
+    & h3 {
+      display: inline-block;
+      background: cyan;
+      border: $brd;
+      color: black;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 7px 13px;
+      outline: none;
+      box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    }
+  }
+}
+
+section {
+  margin-top: 100px;
+  & .content-wrap {
+    width: 70vw;
+    margin: 0 auto;
+
+    & .controlls-wrap {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-column-gap: 2rem;
+      grid-row-gap: 1rem;
+    }
+
+    & .notes-wrap {
+      margin-top: 50px;
+      margin-bottom: 150px;
+      & .notes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-column-gap: 2rem;
+        grid-row-gap: 1rem;
+
+        & .note {
+          position: relative;
+
+          & #return-note {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 60px;
+            z-index: 2;
+            padding: 7px;
+
+            & i {
+              font-size: 20px;
+            }
+          }
+          & #delete-all {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            padding: 7px;
+            & i {
+              transform: translateX(-2px);
+            }
+          }
+          & #return-note,
+          & #delete-all {
+            &:after {
+              content: "";
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              top: 0;
+              left: 0;
+              background: transparent;
+            }
+          }
+          & .note-wrap {
+            border: $brd;
+            background: $cream;
+            padding: 20px;
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.5);
+            &:hover {
+              box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.5);
+            }
+            & h1 {
+              border-bottom: 3px solid rgb(209, 197, 179);
+              padding-bottom: 5px;
+              margin-bottom: 10px;
+            }
+            & p {
+              color: rgba(0, 0, 0, 0.6);
+              max-height: 150px;
+              overflow: auto;
+              padding: 10px;
+              border-radius: 8px;
+              border: 2px solid rgb(241, 234, 224);
+            }
+            & textarea {
+              appearance: none;
+              background: $cream;
+              border: none;
+            }
+            & .note-controlls {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 20px;
+              & .menu {
+                position: relative;
+                border: $brd;
+                padding: 5px 10px;
+                border-radius: 8px;
+                cursor: pointer;
+
+                &:before {
+                  content: "";
+                  position: absolute;
+                  width: 150%;
+                  height: 100%;
+                  top: 10px;
+                  left: -15px;
+                  background: transparent;
+                  display: none;
+                }
+                &:after {
+                  content: "";
+                  position: absolute;
+                  width: 8px;
+                  height: 8px;
+                  border-right: $brd;
+                  border-bottom: $brd;
+                  background: rgba(0, 255, 191, 1);
+                  transform: rotate(45deg);
+                  top: 27px;
+                  left: 17px;
+                  display: none;
+                }
+                & span {
+                  line-height: 1;
+                }
+                & ul {
+                  position: absolute;
+                  top: 40px;
+                  left: -20px;
+                  list-style: none;
+                  border: $brd;
+                  padding: 5px;
+                  border-radius: 8px;
+                  background: $cream;
+                  display: none;
+                  z-index: 2;
+
+                  & li {
+                    cursor: pointer;
+                    &:hover {
+                      color: $darkgreen;
+                    }
+                  }
+                }
+                &:hover {
+                  background: $green;
+                  & ul {
+                    display: block;
+                  }
+                  &:after,
+                  &:before {
+                    display: block;
+                  }
+                }
+              }
+
+              & .status {
+                border: 2px dashed black;
+                padding: 5px 10px;
+                border-radius: 3px;
+
+                & span {
+                  line-height: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+input[type="text"] {
+  background: $cream;
+  border: 2px solid black;
+  outline: none;
+  padding: 5px 5px;
+  font-weight: bold;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+  &:focus {
+    box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.75);
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  width: 100vw;
+  background: $cream;
+  border-top: 2px solid black;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+
+  & .footer-wrap {
+    width: 90%;
+    margin: 0 auto;
+    & h3 {
+      display: inline-block;
+      background: cyan;
+      border: 2px solid black;
+      color: black;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 7px 13px;
+      outline: none;
+      box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    }
+  }
+}
