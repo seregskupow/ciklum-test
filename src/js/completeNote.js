@@ -9,7 +9,9 @@ export const completeNote = (el, complete) => {
   el.querySelector(".note-wrap").style.opacity = "0.3";
   el.querySelector(".menu").style.display = "none";
 
-  allNotes.find(item => item.id == el.getAttribute("data-id")).complete = true;
+  allNotes.find(
+    item => item.id.toString() === el.getAttribute("data-id")
+  ).complete = true;
   saveToStorage(allNotes);
 };
 
@@ -21,6 +23,8 @@ export const returnNote = el => {
   el.querySelector(".note-wrap").style.opacity = "1";
   el.querySelector(".menu").style.display = "block";
 
-  allNotes.find(item => item.id == el.getAttribute("data-id")).complete = false;
+  allNotes.find(
+    item => item.id.toString() === el.getAttribute("data-id")
+  ).complete = false;
   saveToStorage(allNotes);
 };

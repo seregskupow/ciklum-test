@@ -23,7 +23,7 @@ A simple TODO app made with pure JavaScript(ES6)
 ![create-btn](readme_img/create-btn.png)\
 -calls modal window
 
-![modal](readme_img/modal.png)\
+![modal](readme_img/modal.png)
 
 where user has to write the title,description and set the priority status of the note. 
 After this, user can save the note by clicking
@@ -56,7 +56,7 @@ You can access note controlls by hovering **menu** element\
 After this, you would see three parameters appeared:  
 
 * **delete** - deletes the note.
-* **edit*** - calls the modal window where you can edit and save the note.
+* **edit** - calls the modal window where you can edit and save the note.
 * **done** - gives the note **done** status:\
 ![done-note](readme_img/done-state.png)\
 The **done** note has two buttons:

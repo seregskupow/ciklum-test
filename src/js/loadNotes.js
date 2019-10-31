@@ -55,22 +55,22 @@ const displayNotes = notes => {
           note.id
         }>
           <button style="display:${
-            note.complete == true ? "block" : "none"
+            note.complete === true ? "block" : "none"
           }" id="delete-all"><i class="fas fa-times"></i></button>
           <button style="display:${
-            note.complete == true ? "block" : "none"
+            note.complete === true ? "block" : "none"
           }" class="return" id="return-note"><i class="fas fa-undo"></i></button>
           <div class="note-wrap" style="opacity:${
-            note.complete == true ? "0.3" : "1"
+            note.complete === true ? "0.3" : "1"
           }">
             <h1 class="title">${note.title}</h1>
-            <p class="description" style="overflow-wrap: break-word">${
-              note.description.replace(/\r\n/g, '<br />').replace(/[\r\n]/g, '<br />')
-            }</p>
+            <p class="description" style="overflow-wrap: break-word">${note.description
+              .replace(/\r\n/g, "<br />")
+              .replace(/[\r\n]/g, "<br />")}</p>
             <div class="note-controlls">
               <div class="status ${note.status}">${note.status}</div>
               <div class="menu" style="display:${
-                note.complete == false ? "block" : "none"
+                note.complete === false ? "block" : "none"
               }"><span>...</span>
                 <ul>
                     <li class="note-done">done</li>

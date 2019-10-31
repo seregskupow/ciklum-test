@@ -3,10 +3,9 @@ import { saveNote } from "./saveNote.js";
 import { loadNotes } from "./loadNotes.js";
 import { deleteNote, deleteAll } from "./deleteNote.js";
 import { findAncestor } from "./findAncestor.js";
-import { findIndex } from "./findIndex.js";
 import { editNote } from "./editNote.js";
 import { completeNote, returnNote } from "./completeNote.js";
-import '../scss/main.scss';
+import "../scss/main.scss";
 
 const modalBcg = document.querySelector(".modal-bcg"),
   createNote = document.getElementById("create-note"),
@@ -28,18 +27,16 @@ loadNotes();
 //Filter notes
 searchField.addEventListener("keydown", e => {
   notesWrapper.innerHTML = "";
-  loadNotes(e.target.value,prioritySelect.value,completeSelect.value);
-
+  loadNotes(e.target.value, prioritySelect.value, completeSelect.value);
 });
 searchField.addEventListener("keyup", e => {
   notesWrapper.innerHTML = "";
-  loadNotes(e.target.value,prioritySelect.value,completeSelect.value);
-
+  loadNotes(e.target.value, prioritySelect.value, completeSelect.value);
 });
 prioritySelect.addEventListener("change", e => {
   notesWrapper.innerHTML = "";
   console.log(completeSelect.value);
-  loadNotes(searchField.value, e.target.value,completeSelect.value);
+  loadNotes(searchField.value, e.target.value, completeSelect.value);
 });
 completeSelect.addEventListener("change", e => {
   notesWrapper.innerHTML = "";

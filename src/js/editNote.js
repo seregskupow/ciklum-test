@@ -6,12 +6,13 @@ export const editNote = (el, title, description, status, complete) => {
   let note = findAncestor(el, "note"),
     className = note.querySelector(".status").innerHTML,
     i = allNotes.indexOf(
-      allNotes.find(item => item.id == note.getAttribute("data-id"))
+      allNotes.find(item => item.id.toString() === note.getAttribute("data-id"))
     );
 
   note.querySelector(".title").innerHTML = title;
-  note.querySelector(".description").innerHTML = description.replace(/\r\n/g, "<br />")
-  .replace(/[\r\n]/g, "<br />");
+  note.querySelector(".description").innerHTML = description
+    .replace(/\r\n/g, "<br />")
+    .replace(/[\r\n]/g, "<br />");
   note.querySelector(".status").classList.remove(className);
   note.querySelector(".status").classList.add(status);
   note.querySelector(".status").innerHTML = status;
