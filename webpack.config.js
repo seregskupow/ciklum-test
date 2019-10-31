@@ -1,5 +1,6 @@
 const HtmlWepPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: "./src/js/app.js",
@@ -33,11 +34,32 @@ module.exports = {
       },
       {
           test:/\.scss$/,
-          use:[
-              "style-loader",
-              "css-loader",
-              "sass-loader"
-          ]
+           use: [
+                {
+                    loader: 'style-loader'
+                },
+                {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        plugins: [
+                            autoprefixer({
+                                browsers:['ie >= 8', 'last 4 version']
+                            })
+                        ],
+                        sourceMap: true
+                    }
+                },
+                {
+                    loader: 'sass-loader',
+                    
+                }
+            ],
       }
     ]
   },
